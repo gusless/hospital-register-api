@@ -23,6 +23,8 @@ public class Medic {
     @Embedded
     private Endereco endereco;
 
+    private boolean ativo;
+
     @Override
     public String toString() {
         return "Medic{" +
@@ -33,6 +35,7 @@ public class Medic {
                 ", crm='" + crm + '\'' +
                 ", especialidade=" + especialidade +
                 ", endereco=" + endereco +
+                ", ativo=" + ativo +
                 '}';
     }
 
@@ -45,6 +48,7 @@ public class Medic {
         this.crm = crm;
         this.especialidade = especialidade;
         this.endereco = endereco;
+        this.ativo = true;
     }
 
     public Medic(DataRegisterMedic data) {
@@ -54,6 +58,7 @@ public class Medic {
         this.crm = data.crm();
         this.especialidade = data.especialidade();
         this.endereco = new Endereco(data.endereco());
+        this.ativo = true;
     }
 
     public Long getId() {
@@ -84,6 +89,14 @@ public class Medic {
         return endereco;
     }
 
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
     public void updateInfos(@Valid DataUpdateMedic data) {
         if (data.nome() != null) {
             this.nome = data.nome();
@@ -94,5 +107,9 @@ public class Medic {
         if (data.endereco() != null){
             this.endereco.updateInfos(data.endereco());
         }
+    }
+
+    public void exclude() {
+        this.ativo = false;
     }
 }

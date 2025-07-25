@@ -26,7 +26,7 @@ public class MedicController {
 
     @GetMapping
     public Page<DataListenerMedic> listenerMedics(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable){
-        return repository.findAll(pageable).map(DataListenerMedic::new);
+        return repository.findAllByAtivoTrue(pageable).map(DataListenerMedic::new);
     }
 
     @PutMapping
@@ -35,4 +35,13 @@ public class MedicController {
         var medic = repository.getReferenceById(data.id());
         medic.updateInfos(data);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void deleteMedic(@PathVariable Long id){
+        //repository.deleteById(id);
+        var medic = repository.getReferenceById(id);
+        medic.exclude();
+    }
+
 }

@@ -20,15 +20,18 @@ public class Patient {
     @Embedded
     private Endereco endereco;
 
+    private boolean ativo;
+
     @Override
     public String toString() {
         return "Patient{" +
                 "id=" + id +
-                ", name='" + nome + '\'' +
+                ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", endereco=" + endereco +
+                ", ativo=" + ativo +
                 '}';
     }
 
@@ -40,6 +43,7 @@ public class Patient {
         this.telefone = telefone;
         this.cpf = cpf;
         this.endereco = endereco;
+        this.ativo = true;
     }
 
     public Patient(DataRegisterPatient data){
@@ -48,6 +52,7 @@ public class Patient {
         this.telefone = data.telefone();
         this.cpf = data.cpf();
         this.endereco = new Endereco(data.endereco());
+        this.ativo = true;
     }
 
     public Long getId() {
@@ -98,6 +103,13 @@ public class Patient {
         this.endereco = endereco;
     }
 
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
 
     public void updateInfos(@Valid DataUpdatePatient data) {
         if (data.nome() != null){
@@ -109,5 +121,9 @@ public class Patient {
         if (data.endereco() != null){
             this.endereco.updateInfos(data.endereco());
         }
+    }
+
+    public void exclude() {
+        this.ativo = false;
     }
 }
