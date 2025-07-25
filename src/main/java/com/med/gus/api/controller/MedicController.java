@@ -1,12 +1,18 @@
 package com.med.gus.api.controller;
 
+import com.med.gus.api.medic.DataListenerMedic;
 import com.med.gus.api.medic.DataRegisterMedic;
 import com.med.gus.api.medic.Medic;
 import com.med.gus.api.medic.MedicRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/medicos")
@@ -19,5 +25,10 @@ public class MedicController {
     @Transactional
     public void registerMedics(@RequestBody @Valid DataRegisterMedic data){
         repository.save(new Medic(data));
+    }
+
+    @GetMapping
+    public Page<DataListenerMedic> listenerMedics(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable){
+        return repository.findAll(pageable).map(DataListenerMedic::new);
     }
 }

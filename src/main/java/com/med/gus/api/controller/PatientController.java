@@ -1,15 +1,16 @@
 package com.med.gus.api.controller;
 
+import com.med.gus.api.patient.DataListenerPatient;
 import com.med.gus.api.patient.DataRegisterPatient;
 import com.med.gus.api.patient.Patient;
 import com.med.gus.api.patient.PatientRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/pacientes")
@@ -22,5 +23,10 @@ public class PatientController {
     @Transactional
     public void registerPatients(@RequestBody @Valid DataRegisterPatient data){
         repository.save(new Patient(data));
+    }
+
+    @GetMapping
+    public Page<DataListenerPatient> listenerPatients(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable){
+        return repository.findAll(pageable).map(DataListenerPatient::new);
     }
 }
