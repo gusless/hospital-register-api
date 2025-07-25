@@ -1,6 +1,6 @@
-package com.med.gus.api.medic;
+package com.med.gus.api.domain.medic;
 
-import com.med.gus.api.address.Endereco;
+import com.med.gus.api.domain.address.Endereco;
 
 public record DataDetailMedic(
         Long id,

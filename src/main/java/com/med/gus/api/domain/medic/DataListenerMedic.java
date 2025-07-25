@@ -1,4 +1,4 @@
-package com.med.gus.api.medic;
+package com.med.gus.api.domain.medic;
 
 public record DataListenerMedic(
         Long id,

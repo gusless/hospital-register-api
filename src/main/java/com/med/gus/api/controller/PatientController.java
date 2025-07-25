@@ -1,7 +1,6 @@
 package com.med.gus.api.controller;
 
-import com.med.gus.api.medic.Medic;
-import com.med.gus.api.patient.*;
+import com.med.gus.api.domain.patient.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

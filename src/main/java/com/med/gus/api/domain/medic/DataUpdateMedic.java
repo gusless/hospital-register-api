@@ -1,8 +1,6 @@
-package com.med.gus.api.medic;
+package com.med.gus.api.domain.medic;
 
-import com.med.gus.api.address.DataAddress;
-import com.med.gus.api.address.Endereco;
-import jakarta.validation.Valid;
+import com.med.gus.api.domain.address.DataAddress;
 import jakarta.validation.constraints.NotNull;
 
 public record DataUpdateMedic(

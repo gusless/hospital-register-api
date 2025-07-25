@@ -1,4 +1,4 @@
-package com.med.gus.api.patient;
+package com.med.gus.api.domain.patient;
 
 public record DataListenerPatient(
         Long id,

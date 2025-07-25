@@ -1,6 +1,6 @@
-package com.med.gus.api.patient;
+package com.med.gus.api.domain.patient;
 
-import com.med.gus.api.address.DataAddress;
+import com.med.gus.api.domain.address.DataAddress;
 import jakarta.validation.constraints.NotNull;
 
 public record DataUpdatePatient(

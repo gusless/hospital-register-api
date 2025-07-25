@@ -1,21 +1,24 @@
-package com.med.gus.api.patient;
+package com.med.gus.api.domain.medic;
 
-import com.med.gus.api.address.Endereco;
+import com.med.gus.api.domain.address.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 
-@Entity(name = "Paciente")
-@Table(name = "pacientes")
-@EqualsAndHashCode(of = "id")
-public class Patient {
+@Entity(name = "Medico")
+@Table(name = "medicos")
+@EqualsAndHashCode(of="id")
+public class Medic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
     private String telefone;
-    private String cpf;
+    private String crm;
+
+    @Enumerated(EnumType.STRING)
+    private Especialidade especialidade;
 
     @Embedded
     private Endereco endereco;
@@ -24,33 +27,36 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" +
+        return "Medic{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", telefone='" + telefone + '\'' +
-                ", cpf='" + cpf + '\'' +
+                ", crm='" + crm + '\'' +
+                ", especialidade=" + especialidade +
                 ", endereco=" + endereco +
                 ", ativo=" + ativo +
                 '}';
     }
 
-    public Patient() {}
+    public Medic(){}
 
-    public Patient(String name, String email, String telefone, String cpf, Endereco endereco) {
-        this.nome = name;
+    public Medic(String nome, String email, String telefone, String crm, Especialidade especialidade, Endereco endereco) {
+        this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.cpf = cpf;
+        this.crm = crm;
+        this.especialidade = especialidade;
         this.endereco = endereco;
         this.ativo = true;
     }
 
-    public Patient(DataRegisterPatient data){
+    public Medic(DataRegisterMedic data) {
         this.nome = data.nome();
         this.email = data.email();
         this.telefone = data.telefone();
-        this.cpf = data.cpf();
+        this.crm = data.crm();
+        this.especialidade = data.especialidade();
         this.endereco = new Endereco(data.endereco());
         this.ativo = true;
     }
@@ -59,48 +65,28 @@ public class Patient {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public String getCrm() {
+        return crm;
     }
 
-    public String getCpf() {
-        return cpf;
+    public Especialidade getEspecialidade() {
+        return especialidade;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public Endereco getEndereco() {
+    public Endereco getAddress() {
         return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
     }
 
     public boolean isAtivo() {
@@ -111,8 +97,8 @@ public class Patient {
         this.ativo = ativo;
     }
 
-    public void updateInfos(@Valid DataUpdatePatient data) {
-        if (data.nome() != null){
+    public void updateInfos(@Valid DataUpdateMedic data) {
+        if (data.nome() != null) {
             this.nome = data.nome();
         }
         if (data.telefone() != null){

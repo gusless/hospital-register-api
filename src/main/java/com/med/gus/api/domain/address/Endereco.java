@@ -1,4 +1,4 @@
-package com.med.gus.api.address;
+package com.med.gus.api.domain.address;
 
 import jakarta.persistence.Embeddable;
 

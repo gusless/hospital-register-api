@@ -1,4 +1,4 @@
-package com.med.gus.api.address;
+package com.med.gus.api.domain.address;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
