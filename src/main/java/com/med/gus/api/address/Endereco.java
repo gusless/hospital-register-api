@@ -3,7 +3,7 @@ package com.med.gus.api.address;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class Address {
+public class Endereco {
     private String logradouro;
     private String bairro;
     private String cep;
@@ -12,9 +12,9 @@ public class Address {
     private String cidade;
     private String uf;
 
-    public Address(){}
+    public Endereco(){}
 
-    public Address(String logradouro, String bairro, String cep, String numero, String complemento, String cidade, String uf) {
+    public Endereco(String logradouro, String bairro, String cep, String numero, String complemento, String cidade, String uf) {
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.cep = cep;
@@ -24,7 +24,7 @@ public class Address {
         this.uf = uf;
     }
 
-    public Address(DataAddress endereco) {
+    public Endereco(DataAddress endereco) {
         this.logradouro = endereco.logradouro();
         this.bairro = endereco.bairro();
         this.cep = endereco.cep();

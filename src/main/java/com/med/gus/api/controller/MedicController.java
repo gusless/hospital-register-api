@@ -17,7 +17,7 @@ public class MedicController {
 
     @PostMapping
     @Transactional
-    public void register(@RequestBody @Valid DataRegisterMedic data){
+    public void registerMedics(@RequestBody @Valid DataRegisterMedic data){
         repository.save(new Medic(data));
     }
 }
