@@ -2,6 +2,7 @@ package com.med.gus.api.patient;
 
 import com.med.gus.api.address.Endereco;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 
 @Entity(name = "Paciente")
@@ -95,5 +96,18 @@ public class Patient {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+
+    public void updateInfos(@Valid DataUpdatePatient data) {
+        if (data.nome() != null){
+            this.nome = data.nome();
+        }
+        if (data.telefone() != null){
+            this.telefone = data.telefone();
+        }
+        if (data.endereco() != null){
+            this.endereco.updateInfos(data.endereco());
+        }
     }
 }
