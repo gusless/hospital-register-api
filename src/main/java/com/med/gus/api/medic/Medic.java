@@ -102,7 +102,7 @@ public class Medic {
             this.nome = data.nome();
         }
         if (data.telefone() != null){
-            this.telefone = data.nome();
+            this.telefone = data.telefone();
         }
         if (data.endereco() != null){
             this.endereco.updateInfos(data.endereco());
