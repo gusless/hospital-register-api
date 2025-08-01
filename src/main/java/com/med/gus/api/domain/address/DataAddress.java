@@ -5,16 +5,16 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record DataAddress(
-        @NotBlank
+        @NotBlank(message = "{logradouro.obrigatorio}")
         String logradouro,
-        @NotBlank
+        @NotBlank(message = "{bairro.obrigatorio}")
         String bairro,
-        @NotBlank
-        @Pattern(regexp = "\\d{8}")
+        @NotBlank(message = "{cep.obrigatorio}")
+        @Pattern(regexp = "\\d{8}", message = "{cep.invalido}")
         String cep,
-        @NotBlank
+        @NotBlank(message = "{cidade.obrigatorio}")
         String cidade,
-        @NotBlank
+        @NotBlank(message = "{uf.obrigatorio}")
         String uf,
         String numero,
         String complemento

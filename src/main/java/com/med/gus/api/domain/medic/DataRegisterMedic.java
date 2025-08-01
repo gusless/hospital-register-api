@@ -8,18 +8,19 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 
 public record DataRegisterMedic(
-        @NotBlank
+        @NotBlank(message = "{nome.obrigatorio}")
         String nome,
-        @NotBlank
+        @NotBlank(message = "{email.obrigatorio}")
         @Email
         String email,
-        @NotBlank
+        @NotBlank(message = "{telefone.obrigatorio}")
         String telefone,
-        @NotBlank
+        @NotBlank(message = "{crm.obrigatorio}")
         @Pattern(regexp = "\\d{4,6}")
         String crm,
-        @NotNull
+        @NotNull(message = "{especialidade.obrigatorio}")
         Especialidade especialidade,
-        @NotNull @Valid
+        @NotNull(message = "{endereco.obrigatorio}")
+        @Valid
         DataAddress endereco
 ) {}

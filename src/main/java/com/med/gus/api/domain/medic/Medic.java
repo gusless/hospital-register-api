@@ -93,9 +93,6 @@ public class Medic {
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
 
     public void updateInfos(@Valid DataUpdateMedic data) {
         if (data.nome() != null) {

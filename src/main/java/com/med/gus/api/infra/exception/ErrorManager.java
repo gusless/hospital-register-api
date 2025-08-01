@@ -1,5 +1,6 @@
-package com.med.gus.api.infra;
+package com.med.gus.api.infra.exception;
 
+import com.med.gus.api.domain.ValidException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -21,6 +22,11 @@ public class ErrorManager {
         return ResponseEntity.badRequest().body(errors.stream()
                 .map(DataErrorValidation::new)
                 .toList());
+    }
+
+    @ExceptionHandler(ValidException.class)
+    public ResponseEntity manageError400BussinesRule(ValidException ex) {
+        return ResponseEntity.badRequest().body(ex.getMessage());
     }
 
     private record DataErrorValidation(String field, String messenger){
