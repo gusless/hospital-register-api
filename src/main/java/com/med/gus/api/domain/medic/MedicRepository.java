@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.time.LocalDateTime;
 
 public interface MedicRepository extends JpaRepository<Medic, Long> {
+
     Page<Medic> findAllByAtivoTrue(Pageable pageable);
 
     @Query("""

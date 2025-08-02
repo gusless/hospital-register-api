@@ -31,6 +31,7 @@ public class Appointment {
     @Enumerated(EnumType.STRING)
     private MotivoCancelamento motivoCancelamento;
 
+
     @Override
     public String toString() {
         return ", medico=" + medico +
