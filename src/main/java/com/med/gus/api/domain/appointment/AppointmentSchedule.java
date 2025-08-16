@@ -1,6 +1,9 @@
 package com.med.gus.api.domain.appointment;
 
 import com.med.gus.api.domain.ValidException;
+import com.med.gus.api.domain.appointment.dto.DataCancelAppointment;
+import com.med.gus.api.domain.appointment.dto.DataDetailScheduleAppointment;
+import com.med.gus.api.domain.appointment.dto.DataScheduleAppointment;
 import com.med.gus.api.domain.appointment.validations.schedule.ValidateAppointmentSchedule;
 import com.med.gus.api.domain.appointment.validations.cancel.ValidateCancelAppointment;
 import com.med.gus.api.domain.medic.Medic;

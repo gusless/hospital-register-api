@@ -1,4 +1,6 @@
-package com.med.gus.api.domain.appointment;
+package com.med.gus.api.domain.appointment.dto;
+
+import com.med.gus.api.domain.appointment.Appointment;
 
 import java.time.LocalDateTime;
 

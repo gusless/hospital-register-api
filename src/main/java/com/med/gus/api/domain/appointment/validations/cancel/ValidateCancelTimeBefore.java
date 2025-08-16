@@ -2,7 +2,7 @@ package com.med.gus.api.domain.appointment.validations.cancel;
 
 import com.med.gus.api.domain.ValidException;
 import com.med.gus.api.domain.appointment.AppointmentRepository;
-import com.med.gus.api.domain.appointment.DataCancelAppointment;
+import com.med.gus.api.domain.appointment.dto.DataCancelAppointment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

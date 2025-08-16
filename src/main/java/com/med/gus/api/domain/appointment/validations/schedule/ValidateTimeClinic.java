@@ -1,7 +1,7 @@
 package com.med.gus.api.domain.appointment.validations.schedule;
 
 import com.med.gus.api.domain.ValidException;
-import com.med.gus.api.domain.appointment.DataScheduleAppointment;
+import com.med.gus.api.domain.appointment.dto.DataScheduleAppointment;
 import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;

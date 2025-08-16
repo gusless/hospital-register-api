@@ -1,8 +1,8 @@
 package com.med.gus.api.controller;
 
 import com.med.gus.api.domain.appointment.AppointmentSchedule;
-import com.med.gus.api.domain.appointment.DataCancelAppointment;
-import com.med.gus.api.domain.appointment.DataScheduleAppointment;
+import com.med.gus.api.domain.appointment.dto.DataCancelAppointment;
+import com.med.gus.api.domain.appointment.dto.DataScheduleAppointment;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

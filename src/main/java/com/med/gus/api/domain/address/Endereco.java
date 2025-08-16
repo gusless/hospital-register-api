@@ -1,5 +1,6 @@
 package com.med.gus.api.domain.address;
 
+import com.med.gus.api.domain.address.dto.DataAddress;
 import jakarta.persistence.Embeddable;
 
 @Embeddable

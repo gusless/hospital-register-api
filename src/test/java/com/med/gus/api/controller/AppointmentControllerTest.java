@@ -1,8 +1,8 @@
 package com.med.gus.api.controller;
 
 import com.med.gus.api.domain.appointment.AppointmentSchedule;
-import com.med.gus.api.domain.appointment.DataDetailScheduleAppointment;
-import com.med.gus.api.domain.appointment.DataScheduleAppointment;
+import com.med.gus.api.domain.appointment.dto.DataDetailScheduleAppointment;
+import com.med.gus.api.domain.appointment.dto.DataScheduleAppointment;
 import com.med.gus.api.domain.medic.Especialidade;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

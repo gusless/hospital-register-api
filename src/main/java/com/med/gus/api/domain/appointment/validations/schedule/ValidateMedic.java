@@ -1,7 +1,7 @@
 package com.med.gus.api.domain.appointment.validations.schedule;
 
 import com.med.gus.api.domain.ValidException;
-import com.med.gus.api.domain.appointment.DataScheduleAppointment;
+import com.med.gus.api.domain.appointment.dto.DataScheduleAppointment;
 import com.med.gus.api.domain.medic.MedicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

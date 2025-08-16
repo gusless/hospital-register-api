@@ -1,29 +1,24 @@
 package com.med.gus.api.domain.medic;
 
-import com.med.gus.api.domain.address.DataAddress;
+import com.med.gus.api.domain.address.dto.DataAddress;
 import com.med.gus.api.domain.appointment.Appointment;
-import com.med.gus.api.domain.patient.DataRegisterPatient;
+import com.med.gus.api.domain.medic.dto.DataRegisterMedic;
+import com.med.gus.api.domain.patient.dto.DataRegisterPatient;
 import com.med.gus.api.domain.patient.Patient;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.NotNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.security.core.parameters.P;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
-import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)

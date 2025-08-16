@@ -1,6 +1,8 @@
 package com.med.gus.api.domain.medic;
 
 import com.med.gus.api.domain.address.Endereco;
+import com.med.gus.api.domain.medic.dto.DataRegisterMedic;
+import com.med.gus.api.domain.medic.dto.DataUpdateMedic;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;

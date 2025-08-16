@@ -1,6 +1,10 @@
 package com.med.gus.api.controller;
 
 import com.med.gus.api.domain.medic.*;
+import com.med.gus.api.domain.medic.dto.DataDetailMedic;
+import com.med.gus.api.domain.medic.dto.DataListenerMedic;
+import com.med.gus.api.domain.medic.dto.DataRegisterMedic;
+import com.med.gus.api.domain.medic.dto.DataUpdateMedic;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

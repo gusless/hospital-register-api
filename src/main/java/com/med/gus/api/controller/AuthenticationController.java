@@ -1,6 +1,6 @@
 package com.med.gus.api.controller;
 
-import com.med.gus.api.domain.user.DataAuthentication;
+import com.med.gus.api.domain.user.dto.DataAuthentication;
 import com.med.gus.api.domain.user.User;
 import com.med.gus.api.infra.security.DataTokenJWT;
 import com.med.gus.api.infra.security.TokenService;

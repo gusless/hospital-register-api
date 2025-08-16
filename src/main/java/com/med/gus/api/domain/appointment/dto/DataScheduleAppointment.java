@@ -1,4 +1,4 @@
-package com.med.gus.api.domain.appointment;
+package com.med.gus.api.domain.appointment.dto;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.med.gus.api.domain.medic.Especialidade;

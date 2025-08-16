@@ -1,4 +1,6 @@
-package com.med.gus.api.domain.patient;
+package com.med.gus.api.domain.patient.dto;
+
+import com.med.gus.api.domain.patient.Patient;
 
 public record DataListenerPatient(
         Long id,

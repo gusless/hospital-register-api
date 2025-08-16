@@ -1,9 +1,9 @@
-package com.med.gus.api.domain.medic;
+package com.med.gus.api.domain.patient.dto;
 
-import com.med.gus.api.domain.address.DataAddress;
+import com.med.gus.api.domain.address.dto.DataAddress;
 import jakarta.validation.constraints.NotNull;
 
-public record DataUpdateMedic(
+public record DataUpdatePatient(
         @NotNull
         Long id,
         String nome,

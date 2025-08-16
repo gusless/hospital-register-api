@@ -1,6 +1,6 @@
-package com.med.gus.api.domain.patient;
+package com.med.gus.api.domain.patient.dto;
 
-import com.med.gus.api.domain.address.DataAddress;
+import com.med.gus.api.domain.address.dto.DataAddress;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
