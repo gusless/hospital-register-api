@@ -162,10 +162,15 @@ Request:
     "cep": "00000-000",
     "cidade": "São Paulo",
     "uf": "SP",
+    "numero": "3325",
     "complemento": "Apto 10"
   }
 }
 ```
+
+>[!Important]
+>- Conferir [ENUM](src/main/java/com/med/gus/api/domain/medic/Especialidade.java) de especialidade.
+>- O `numero` e o `complemento` são opcionais.
 
 ---
 
@@ -189,6 +194,9 @@ Request:
 }
 ```
 
+>[!Important]
+>- O `numero` e o `complemento` são opcionais.
+
 ---
 
 ### 📅 Agendar Consulta
@@ -199,7 +207,17 @@ Request:
 {
   "idPatient": 2,
   "idMedic": 1,
-  "data": "2025-08-20T10:00:00"
+  "data": "2025-08-05T16:00"
+}
+```
+
+Para selecionar um médico aleatório, basta enviar a especialidade ao invés do id do médico:
+
+```json
+{
+	"idPatient": 1,
+	"especialidade": "CARDIOLOGIA",
+	"data": "2025-08-05T16:00"
 }
 ```
 
@@ -211,10 +229,13 @@ Request:
 Request:
 ```json
 {
-  "idAppointment": 10,
-  "motivo": "Paciente não poderá comparecer"
+  "idConsulta": 10,
+  "motivo": "PACIENTE_DESISTIU" 
 }
 ```
+
+>[!Important]
+>Conferir [ENUM](src/main/java/com/med/gus/api/domain/appointment/MotivoCancelamento.java) de motivos
 
 ---
 
